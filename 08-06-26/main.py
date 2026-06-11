@@ -216,7 +216,7 @@ def update_camera():
     camera_x = player_x * BLOCK_SIZE - WIDTH // 2
     camera_y = player_y * BLOCK_SIZE - HEIGHT // 2
 
-# -----------------------
+# -----------------------_
 # KEYS
 # -----------------------
 
