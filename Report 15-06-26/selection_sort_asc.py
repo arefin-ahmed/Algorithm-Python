@@ -10,7 +10,6 @@ def selection_sort(n):
 
     return n
 
-
 n = list(map(int, input("Enter integers separated by space: ").split()))
 
-print("Sorted Array:", selection_sort(n))
+print("Sorted Array:", selection_sort(n)) 
