@@ -33,4 +33,4 @@ def merge_sort(A, lb, ub):
         merge(A, lb, mid, ub)
 
 A = list(map(int, input("Enter numbers: ").split()))
-print("Sorted Array: ", merge_sort(A, 0, len(A)-1))
+print("Sorted Array: ", merge_sort(A, 0, len(A)-1)) 
