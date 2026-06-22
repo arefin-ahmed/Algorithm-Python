@@ -21,5 +21,5 @@ def partition(A, lb, ub):
 
     return j
 
-j = input("Enter characters separated by space: ").split()
-print("Sorted Array: ", quick_sort(j))       
+j = list(map(int, input("Enter numbers: ").split()))
+print("Sorted Array: ", quick_sort(j, 0, len(j)-1))
