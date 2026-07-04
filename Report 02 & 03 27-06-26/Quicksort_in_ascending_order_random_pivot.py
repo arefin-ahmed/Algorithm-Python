@@ -89,20 +89,3 @@ for size in sizes:
     comparison_counts.append(comparisons)
 
     print(f"n = {size:5d} --> Comparisons = {comparisons}")
-
-
-# --------------------------------
-# Plot Graph
-# --------------------------------
-
-plt.plot(sizes, comparison_counts, marker='o')
-
-plt.title("Quick Sort Performance")
-
-plt.xlabel("Input Size (n)")
-
-plt.ylabel("Number of Comparisons")
-
-plt.grid(True)
-
-plt.show()
