@@ -23,22 +23,30 @@ def knapsack(maxWeight, n):
     if i < n:
         itemFraction[i] = capacity / weight[i]
 
+    # for i in range(n):
+    # if weight[i] > capacity:
+    #     itemFraction[i] = capacity / weight[i]
+    #     break
+
+    # itemFraction[i] = 1.0
+    # capacity -= weight[i]
 
 def profit_calculation (n):
     totalProfit = 0
     for i in range (n):
         totalProfit += itemFraction[i]*profit[i]
-    print(totalProfit)
+    # print(totalProfit)
+    return totalProfit
 
-    return itemFraction
+n = int(input("Enter number of items: "))
 
-m = int(input("Enter array size: "))
-A = []
-n = int(input("Enter array size: "))
-B = []
-print("Enter array elements:")
-for _ in range(m):
-    A.append(int(input()))
-for _ in range(n):
-    B.append(int(input()))
-print("\nSorted Array (Ascending):")
+for i in range(n):
+    profit[i] = float(input(f"Profit of item {i+1}: "))
+
+for i in range(n):
+    weight[i] = float(input(f"Weight of item {i+1}: "))
+
+maxWeight = float(input("Enter knapsack capacity: "))
+
+knapsack(maxWeight, n)
+print(f"Maximum Profit = {profit_calculation(n):.2f}")
