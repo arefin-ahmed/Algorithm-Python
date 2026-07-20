@@ -1,4 +1,4 @@
-# Activity Selection using Minimum Duration
+# Activity Selection using Minimum Duration 
 
 def printMaxActivities(activityID, start, finish, duration, n):
 
