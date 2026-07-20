@@ -1,9 +1,9 @@
-def knapsack(weight, value, n, w, V):
+def knapsack():
     n = int (input ("Enter the number of items: "))
     weight = []
     value = []
 
-    for c in range (w):
+    for c in range (n):
         w = int (input ("Enter the weight of items: "))
         weight.append (w)
     
@@ -11,8 +11,12 @@ def knapsack(weight, value, n, w, V):
         v = int (input ("Enter the value of items: "))
         value.append (v)
     
-    for i in range (n):
-        for c in range (w):
+    c = int (input ("Enter the capacity of knapsack: "))
+
+    V = [[0 for _ in range(c + 1)] for i in range(n + 1)]
+    
+    for i in range (1, n+1):
+        for c in range (1, c+1):
             if weight [i-1] <= c:
 
                 if value [i-1] + V[i-1][c-weight[i-1]] > V[i-1][c]:
@@ -22,3 +26,11 @@ def knapsack(weight, value, n, w, V):
             
             else:
                 V[i][c] = V[i-1][c]
+
+    print ("\nDP Table:")
+    for row in V:
+        print(row)
+    
+    print ("\nMaximum Value in knapsack =", V[n][c])
+
+knapsack()
