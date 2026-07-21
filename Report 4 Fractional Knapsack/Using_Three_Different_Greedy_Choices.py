@@ -44,11 +44,9 @@ profit = [60, 100, 120]
 weight = [10, 20, 30]
 capacity = 50
 
-
 result1 = knapsack(profit.copy(), weight.copy(), capacity, 1)
 result2 = knapsack(profit.copy(), weight.copy(), capacity, 2)
 result3 = knapsack(profit.copy(), weight.copy(), capacity, 3)
-
 
 print("Maximum Profit       :", result1)
 print("Minimum Weight       :", result2)
