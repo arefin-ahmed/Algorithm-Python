@@ -1,12 +1,16 @@
-def fractional_knapsack_profit(profit, weight, capacity):
+def fractional_knapsack_max_profit(profit, weight, capacity):
     n = len(profit)
+
+    # Create list of items
     items = []
+
     for i in range(n):
         items.append([profit[i], weight[i]])
 
+    # Sort by profit in descending order
     for i in range(n):
         MAX = i
-        
+
         for j in range(i + 1, n):
             if items[j][0] > items[MAX][0]:
                 MAX = j
@@ -17,6 +21,7 @@ def fractional_knapsack_profit(profit, weight, capacity):
     total_profit = 0
     item_fraction = [0] * n
 
+    # Select items
     for i in range(n):
         if items[i][1] <= capacity:
             item_fraction[i] = 1
@@ -33,11 +38,13 @@ def fractional_knapsack_profit(profit, weight, capacity):
     return total_profit
 
 
+# Input
 profit = [60, 100, 120]
 weight = [10, 20, 30]
 capacity = 50
 
-result = fractional_knapsack_profit(
+# Function call
+result = fractional_knapsack_max_profit(
     profit, weight, capacity
 )
 
