@@ -13,7 +13,7 @@ for i in range(n):
     p = int(input("Enter profit of item " + str(i + 1) + ": "))
     profit.append(p)
 
-W = int(input("Enter knapsack capacity: "))
+W = int(input("Enter knapsack capacity: ")) 
 
 # Create Knapsack Table
 V = [[0 for c in range(W + 1)] for i in range(n + 1)]
