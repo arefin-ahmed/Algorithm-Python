@@ -16,30 +16,34 @@ for i in range (n):
         if graph [i][j] == 0 and i!=j:
             graph [i][j] = INF
 
-for i in range (n-1):
-    dist = graph [src][i]
-    visited = [0]
+dist = []
+visited = []
+
+for i in range(n):
+    dist.append(graph[src][i])
+    visited.append(0)
+
 
 dist[src] = 0
 visited[src] = 1
 
-for c in range (1, n-1):
+for c in range (1, n):
     min = INF
     next = -1
 
-    for i in range (n-1):
+    for i in range (n):
         if not visited[i] and dist[i] < min:
             min = dist[i]
             next = i
 
     visited[next] = 1
 
-    for i in range (n-1):
+    for i in range (n):
         if not visited [i] and dist [next] + graph [next][i] < dist[i]:
             dist[i] = dist[next] + graph[next][i]
 
 print ("Shortest distance from node", src)
-for i in range (n-1):
+for i in range (n):
     if dist[i] == INF:
         print (src, "->" , i, "No Path")
     else:
