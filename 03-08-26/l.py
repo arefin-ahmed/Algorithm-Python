@@ -12,15 +12,15 @@ def lcs_length(X, Y):
 
             if X[i - 1] == Y[j - 1]:
                 c[i][j] = c[i - 1][j - 1] + 1
-                b[i][j] = "↖"
+                b[i][j] = "*"
 
             elif c[i - 1][j] >= c[i][j - 1]:
                 c[i][j] = c[i - 1][j]
-                b[i][j] = "↑"
+                b[i][j] = "?"
 
             else:
                 c[i][j] = c[i][j - 1]
-                b[i][j] = "←"
+                b[i][j] = "#"
 
     return c, b
 
@@ -29,10 +29,10 @@ def print_lcs(b, X, i, j):
     if i == 0 or j == 0:
         return ""
 
-    if b[i][j] == "↖":
+    if b[i][j] == "*":
         return print_lcs(b, X, i - 1, j - 1) + X[i - 1]
 
-    elif b[i][j] == "↑":
+    elif b[i][j] == "?":
         return print_lcs(b, X, i - 1, j)
 
     else:
