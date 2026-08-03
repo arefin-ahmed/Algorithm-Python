@@ -1,16 +1,14 @@
-def lcs_length(X, Y):
-    m = len(X)
-    n = len(Y)
+def lcs_length(x, y):
+    m = len(x)
+    n = len(y)
 
-    # Create tables
     c = [[0] * (n + 1) for _ in range(m + 1)]
     b = [[""] * (n + 1) for _ in range(m + 1)]
 
-    # Fill tables
     for i in range(1, m + 1):
         for j in range(1, n + 1):
 
-            if X[i - 1] == Y[j - 1]:
+            if x[i - 1] == y[j - 1]:
                 c[i][j] = c[i - 1][j - 1] + 1
                 b[i][j] = "*"
 
@@ -38,12 +36,10 @@ def print_lcs(b, X, i, j):
     else:
         return print_lcs(b, X, i, j - 1)
 
+x = input ("First input -> ")
+y = input ("Second input -> ")
 
-# Main Program
-X = "BACDB"
-Y = "BDCB"
-
-c, b = lcs_length(X, Y)
+c, b = lcs_length(x, y)
 
 print("Length Table (c):")
 for row in c:
@@ -53,7 +49,7 @@ print("\nDirection Table (b):")
 for row in b:
     print(row)
 
-lcs = print_lcs(b, X, len(X), len(Y))
+lcs = print_lcs(b, x, len(x), len(y))
 
 print("\nLongest Common Subsequence:", lcs)
 print("Length of LCS:", len(lcs))
