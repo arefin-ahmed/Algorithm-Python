@@ -70,7 +70,7 @@ for i in range(n):
 
 m = int(input("Enter number of directed edges: "))
 
-print("\nEnter edges in this format:")
+print("\nEnter edges in this format->")
 print("Source Destination Weight")
 
 for i in range(m):
