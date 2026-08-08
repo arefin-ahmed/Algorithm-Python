@@ -50,7 +50,6 @@ def find_path(parent, source, destination):
             break
 
         current = parent[current]
-
     path.reverse()
 
     return path
