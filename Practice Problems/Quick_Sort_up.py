@@ -5,14 +5,14 @@ def quick_sort(A, lb, ub):
         quick_sort(A, loc + 1, ub)
 
 def partition(A, lb, ub):
-    pivot = A[lb]
+    pivot = A[ub]
     i = lb + 1
     j = ub
 
     while i <= j:
         while i <= ub and A[i] <= pivot:
             i += 1
-        while j >= lb and A[j] > pivot:
+        while j <= ub and A[j] > pivot:
             j -= 1
         if i < j:
             A[i], A[j] = A[j], A[i]
