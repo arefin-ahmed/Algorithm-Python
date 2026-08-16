@@ -128,3 +128,15 @@ printMaxActivities(
     finish,
     n
 )
+
+
+
+# print("Activities Before Sorting")
+
+# print("Activity\tStart\tFinish")
+
+# for i in range(n):
+#     print(activityID[i], "\t\t", start[i], "\t", finish[i])
+
+
+# quickSort(activityID, start, finish, 0, n - 1)

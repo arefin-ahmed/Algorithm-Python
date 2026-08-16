@@ -67,17 +67,6 @@ start = [9.0, 9.5, 10.5, 11.0, 12.0, 13.0, 13.5, 14.5]
 finish = [10.5, 11.0, 12.0, 13.0, 13.5, 14.5, 15.0, 16.0]
 
 
-print("Activities Before Sorting")
-
-print("Activity\tStart\tFinish")
-
-for i in range(n):
-    print(activityID[i], "\t\t", start[i], "\t", finish[i])
-
-
-quickSort(activityID, start, finish, 0, n - 1)
-
-
 print("\nActivities After Sorting (Earliest Finish Time)")
 
 print("Activity\tStart\tFinish")
